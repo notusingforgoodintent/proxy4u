@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Proxy</title>
+    <style>
+        body { background: #0a0a0a; color: white; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .container { text-align: center; width: 90%; max-width: 500px; }
+        input { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #333; background: #111; color: white; font-size: 16px; margin-bottom: 10px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border-radius: 8px; border: none; background: #0070f3; color: white; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sleek Proxy</h1>
+        <input type="text" id="urlInput" placeholder="https://example.com">
+        <button onclick="go()">Go to Website</button>
+    </div>
+
+    <script>
+        function go() {
+            const val = document.getElementById('urlInput').value;
+            if (val) {
+                window.location.href = `/proxy?url=${encodeURIComponent(val)}`;
+            }
+        }
+    </script>
+</body>
+</html>
